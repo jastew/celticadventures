@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <h2>Opening Hours!</h2>
+  <ol>
+  {% for open in site.data.open %}
+    <li>
+      <strong>{{ open.day }}</strong>
+      &nbsp;
+      <span>{{ open.hours }}</span>
+    </li>
+  {% endfor %}
+  </ol>
+
+  <hr>
+
+  <!-- activity list -->
+  <section class="activity-list">
+    <h2 class="activity-list__heading">Activities</h2>
+    <ul class="activity-list__items">
+      {% for activity in site.activities %}
+        <li class="activity-list__item">
+
+          <article class="activity">
+            <figure class="activity__image">
+              <img src="{{ activity.image }}" alt="">
+            </figure>
+            <div class="activity__body">
+              <h3 class="activity__name">{{ activity.name }}</h3>
+              <p class="activity__text">{{ activity.description }}</p>
+              <a href="{{ activity.url }}" class="btn">Find out more</a>
+            </div>
+          </article>
+
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <!-- @end activity list -->
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

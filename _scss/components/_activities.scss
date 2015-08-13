@@ -1,0 +1,32 @@
+.activity-list__items {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.activity-list__item {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #eee;
+
+  &:last-of-type {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.activity {
+  overflow: hidden;
+}
+.activity__image {
+
+  @media (min-width: 450px) {
+    float: left;
+    max-width: 120px;
+    width: 30%;
+    margin: 0 1em 0 0;
+  }
+}
+.activity__title {
+  margin-top: 0;
+  margin-bottom: 0; 
+}
